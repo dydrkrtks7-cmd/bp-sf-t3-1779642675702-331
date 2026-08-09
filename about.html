@@ -1,374 +1,372 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정보 | PBN 빌더 - 마포 신작애니 제작 노하우</title>
-    <meta name="description" content="PBN 빌더가 마포에서 신작애니를 만드는 이유, 작업 프로세스, 자주 묻는 질문까지. 노아 스튜디오가 직접 경험한 인사이트를 공유합니다.">
-    <meta name="keywords" content="PBN 빌더, 마포 애니메이션, 신작애니 제작, 애니메이션 스튜디오, 홍대 애니메이션, 상암 애니메이션, 프리랜서 개발자, 노아 스튜디오">
-    <link rel="canonical" href="https://sf-t3-1779642675702-331.maphoshirts.xyz/about.html">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-noir-gold">
-    <meta property="og:title" content="정보 | PBN 빌더 - 마포 신작애니 제작 노하우">
-    <meta property="og:description" content="PBN 빌더가 마포에서 신작애니를 만드는 이유, 작업 프로세스, 자주 묻는 질문까지. 노아 스튜디오가 직접 경험한 인사이트를 공유합니다.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            line-height: 1.7;
-            letter-spacing: 0.02em;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-left: 24px;
-            padding-right: 24px;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #d4af37;
-            text-decoration: none;
-        }
-        .logo span {
-            color: #e5e5e5;
-            font-weight: 300;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        nav a {
-            color: #a0a0a0;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-        nav a:hover {
-            color: #d4af37;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-            padding: 4px;
-        }
-        .hamburger span {
-            width: 28px;
-            height: 2px;
-            background: #d4af37;
-            transition: all 0.3s ease;
-        }
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                padding: 24px;
-                gap: 20px;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-            }
-            nav ul.active {
-                display: flex;
-            }
-            .header-inner {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-        }
-        .hero-section {
-            padding: 100px 0 60px;
-            text-align: center;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #d4af37;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-        }
-        .hero-section .subtitle {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .section {
-            padding: 80px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.08);
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #d4af37;
-            margin-bottom: 40px;
-            letter-spacing: -0.02em;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .hero-section {
-                padding: 60px 0 40px;
-            }
-            .section {
-                padding: 48px 0;
-            }
-        }
-        .info-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(212, 175, 55, 0.12);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-        }
-        .info-card:hover {
-            border-color: rgba(212, 175, 55, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .info-card h3 {
-            font-size: 1.3rem;
-            color: #d4af37;
-            margin-bottom: 16px;
-        }
-        .info-card p {
-            color: #c0c0c0;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-        .info-card .highlight {
-            color: #d4af37;
-            font-weight: 500;
-        }
-        .faq-item {
-            padding: 24px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        .faq-question {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #e5e5e5;
-            margin-bottom: 12px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question::after {
-            content: '+';
-            color: #d4af37;
-            font-size: 1.4rem;
-            font-weight: 300;
-        }
-        .faq-answer {
-            color: #a0a0a0;
-            font-size: 0.95rem;
-            line-height: 1.8;
-            padding-right: 40px;
-        }
-        .process-step {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 32px;
-            align-items: flex-start;
-        }
-        .process-step .step-num {
-            font-size: 2rem;
-            font-weight: 700;
-            color: rgba(212, 175, 55, 0.3);
-            min-width: 60px;
-            line-height: 1;
-        }
-        .process-step .step-content h4 {
-            color: #d4af37;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-        .process-step .step-content p {
-            color: #a0a0a0;
-            font-size: 0.95rem;
-        }
-        .cta-section {
-            text-align: center;
-            padding: 80px 0;
-        }
-        .cta-button {
-            display: inline-block;
-            background: transparent;
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            padding: 16px 48px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.05em;
-        }
-        .cta-button:hover {
-            background: #d4af37;
-            color: #0a0a0a;
-        }
-        .tel-link {
-            color: #d4af37;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            transition: border-color 0.3s ease;
-        }
-        .tel-link:hover {
-            border-color: #d4af37;
-        }
-        footer {
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 40px 0;
-            text-align: center;
-            color: #666;
-            font-size: 0.85rem;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>정보 | PBN 빌더 - 마포 신작애니 제작 노하우</title>
+ <meta name="description" content="PBN 빌더가 마포에서 신작애니를 만드는 이유, 작업 프로세스, 자주 묻는 질문까지. 노아 스튜디오가 직접 경험한 인사이트를 공유합니다.">
+ <meta name="keywords" content="PBN 빌더, 마포 애니메이션, 신작애니 제작, 애니메이션 스튜디오, 홍대 애니메이션, 상암 애니메이션, 프리랜서 개발자, 노아 스튜디오">
+ <link rel="canonical" href="https://sf-t3-1779642675702-331.maphoshirts.xyz/about.html">
+ <meta property="og:title" content="정보 | PBN 빌더 - 마포 신작애니 제작 노하우">
+ <meta property="og:description" content="PBN 빌더가 마포에서 신작애니를 만드는 이유, 작업 프로세스, 자주 묻는 질문까지. 노아 스튜디오가 직접 경험한 인사이트를 공유합니다.">
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ background: #0a0a0a;
+ color: #e5e5e5;
+ line-height: 1.7;
+ letter-spacing: 0.02em;
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ header {
+ background: rgba(10, 10, 10, 0.95);
+ backdrop-filter: blur(20px);
+ -webkit-backdrop-filter: blur(20px);
+ border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 16px 0;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding-left: 24px;
+ padding-right: 24px;
+ }
+ .logo {
+ font-size: 1.5rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: #d4af37;
+ text-decoration: none;
+ }
+ .logo span {
+ color: #e5e5e5;
+ font-weight: 300;
+ }
+ nav ul {
+ list-style: none;
+ display: flex;
+ gap: 32px;
+ align-items: center;
+ }
+ nav a {
+ color: #a0a0a0;
+ text-decoration: none;
+ font-size: 0.95rem;
+ font-weight: 400;
+ transition: color 0.3s ease;
+ letter-spacing: 0.05em;
+ }
+ nav a:hover {
+ color: #d4af37;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 6px;
+ padding: 4px;
+ }
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background: #d4af37;
+ transition: all 0.3s ease;
+ }
+ @media (max-width: 768px) {
+ .hamburger {
+ display: flex;
+ }
+ nav ul {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ background: rgba(10, 10, 10, 0.98);
+ flex-direction: column;
+ padding: 24px;
+ gap: 20px;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .header-inner {
+ padding-left: 16px;
+ padding-right: 16px;
+ }
+ }
+ .hero-section {
+ padding: 100px 0 60px;
+ text-align: center;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ }
+ .hero-section h1 {
+ font-size: 3rem;
+ font-weight: 700;
+ color: #d4af37;
+ letter-spacing: -0.03em;
+ margin-bottom: 16px;
+ }
+ .hero-section .subtitle {
+ font-size: 1.2rem;
+ color: #a0a0a0;
+ max-width: 700px;
+ margin: 0 auto;
+ }
+ .section {
+ padding: 80px 0;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+ }
+ .section:last-child {
+ border-bottom: none;
+ }
+ .section-title {
+ font-size: 2rem;
+ font-weight: 600;
+ color: #d4af37;
+ margin-bottom: 40px;
+ letter-spacing: -0.02em;
+ }
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ @media (max-width: 768px) {
+ .grid-2 {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ .hero-section h1 {
+ font-size: 2rem;
+ }
+ .hero-section {
+ padding: 60px 0 40px;
+ }
+ .section {
+ padding: 48px 0;
+ }
+ }
+ .info-card {
+ background: rgba(255, 255, 255, 0.03);
+ border: 1px solid rgba(212, 175, 55, 0.12);
+ border-radius: 16px;
+ padding: 32px;
+ transition: all 0.3s ease;
+ }
+ .info-card:hover {
+ border-color: rgba(212, 175, 55, 0.3);
+ background: rgba(255, 255, 255, 0.05);
+ }
+ .info-card h3 {
+ font-size: 1.3rem;
+ color: #d4af37;
+ margin-bottom: 16px;
+ }
+ .info-card p {
+ color: #c0c0c0;
+ font-size: 0.95rem;
+ margin-bottom: 12px;
+ }
+ .info-card .highlight {
+ color: #d4af37;
+ font-weight: 500;
+ }
+ .faq-item {
+ padding: 24px 0;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ }
+ .faq-item:last-child {
+ border-bottom: none;
+ }
+ .faq-question {
+ font-size: 1.1rem;
+ font-weight: 600;
+ color: #e5e5e5;
+ margin-bottom: 12px;
+ cursor: pointer;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .faq-question::after {
+ content: '+';
+ color: #d4af37;
+ font-size: 1.4rem;
+ font-weight: 300;
+ }
+ .faq-answer {
+ color: #a0a0a0;
+ font-size: 0.95rem;
+ line-height: 1.8;
+ padding-right: 40px;
+ }
+ .process-step {
+ display: flex;
+ gap: 24px;
+ margin-bottom: 32px;
+ align-items: flex-start;
+ }
+ .process-step .step-num {
+ font-size: 2rem;
+ font-weight: 700;
+ color: rgba(212, 175, 55, 0.3);
+ min-width: 60px;
+ line-height: 1;
+ }
+ .process-step .step-content h4 {
+ color: #d4af37;
+ font-size: 1.1rem;
+ margin-bottom: 8px;
+ }
+ .process-step .step-content p {
+ color: #a0a0a0;
+ font-size: 0.95rem;
+ }
+ .cta-section {
+ text-align: center;
+ padding: 80px 0;
+ }
+ .cta-button {
+ display: inline-block;
+ background: transparent;
+ border: 2px solid #d4af37;
+ color: #d4af37;
+ padding: 16px 48px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ text-decoration: none;
+ border-radius: 50px;
+ transition: all 0.3s ease;
+ letter-spacing: 0.05em;
+ }
+ .cta-button:hover {
+ background: #d4af37;
+ color: #0a0a0a;
+ }
+ .tel-link {
+ color: #d4af37;
+ text-decoration: none;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+ transition: border-color 0.3s ease;
+ }
+ .tel-link:hover {
+ border-color: #d4af37;
+ }
+ footer {
+ border-top: 1px solid rgba(212, 175, 55, 0.1);
+ padding: 40px 0;
+ text-align: center;
+ color: #666;
+ font-size: 0.85rem;
+ }
+ </style>
   <meta property="og:url" content="https://sf-t3-1779642675702-331.maphoshirts.xyz/about.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="/" class="logo">PBN<span>빌더</span></a>
-            <nav>
-                <ul>
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info">정보</a></li>
-                    <li><a href="/work">작업</a></li>
-                    <li><a href="tel:010-1234-5678" class="tel-link">문의</a></li>
-                </ul>
-                <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+ <a href="/" class="logo">PBN<span>빌더</span></a>
+ <nav>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/info">정보</a></li>
+ <li><a href="/work">작업</a></li>
+ 
+ </ul>
+ <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+ 
+ 
+ 
+ </div>
+ </nav>
+ </div>
+ </header>
 
 <main>
-  <section class="hero-section container">
-    <p class="subtitle">마포 · 신작애니 제작 정보</p>
-    <h1>PBN 빌더 정보 안내</h1>
-    <p>이 페이지는 PBN 빌더 도구를 마포 지역 신작애니 제작 환경에서 활용할 때 알아두면 좋은 절차와 구성 요소를 정리한 안내 지면이다. 도구 자체의 기능보다 도입 전 검토해야 할 항목을 중심으로 설명한다.</p>
-  </section>
+ <section class="hero-section container">
+ <p class="subtitle">마포 · 신작애니 제작 정보</p>
+ <h1>PBN 빌더 정보 안내</h1>
+ <p>이 페이지는 PBN 빌더 도구를 마포 지역 신작애니 제작 환경에서 활용할 때 알아두면 좋은 절차와 구성 요소를 정리한 안내 지면이다. 도구 자체의 기능보다 도입 전 검토해야 할 항목을 중심으로 설명한다.</p>
+ </section>
 
-  <section class="section container">
-    <h2 class="section-title">도입 절차</h2>
-    <div class="process-step">
-      <span class="step-num">1</span>
-      <div class="step-content">
-        <h3>목적 정의</h3>
-        <p>어떤 콘텐츠 네트워크를 구성할 것인지, 연결 대상과 목표를 먼저 정리한다.</p>
-      </div>
-    </div>
-    <div class="process-step">
-      <span class="step-num">2</span>
-      <div class="step-content">
-        <h3>구조 설계</h3>
-        <p>사이트 간 연결 방식과 콘텐츠 배분 규칙을 설계 단계에서 문서화한다.</p>
-      </div>
-    </div>
-    <div class="process-step">
-      <span class="step-num">3</span>
-      <div class="step-content">
-        <h3>운영 및 점검</h3>
-        <p>구축 이후에는 정기적인 점검을 통해 연결 상태와 콘텐츠 품질을 유지 관리한다.</p>
-      </div>
-    </div>
-  </section>
+ <section class="section container">
+ <h2 class="section-title">도입 절차</h2>
+ <div class="process-step">
+ <span class="step-num">1</span>
+ <div class="step-content">
+ <h3>목적 정의</h3>
+ <p>어떤 콘텐츠 네트워크를 구성할 것인지, 연결 대상과 목표를 먼저 정리한다.</p>
+ </div>
+ </div>
+ <div class="process-step">
+ <span class="step-num">2</span>
+ <div class="step-content">
+ <h3>구조 설계</h3>
+ <p>사이트 간 연결 방식과 콘텐츠 배분 규칙을 설계 단계에서 문서화한다.</p>
+ </div>
+ </div>
+ <div class="process-step">
+ <span class="step-num">3</span>
+ <div class="step-content">
+ <h3>운영 및 점검</h3>
+ <p>구축 이후에는 정기적인 점검을 통해 연결 상태와 콘텐츠 품질을 유지 관리한다.</p>
+ </div>
+ </div>
+ </section>
 
-  <section class="section container">
-    <h2 class="section-title">구성 요소</h2>
-    <div class="grid-2">
-      <div class="info-card">
-        <h3>콘텐츠 관리</h3>
-        <p>제작 일정과 주제를 미리 계획해 반복 작업을 줄이는 구조가 일반적이다.</p>
-      </div>
-      <div class="info-card">
-        <h3>연결 관리</h3>
-        <p>각 사이트 간 연결 규칙을 기록해두면 이후 점검과 수정이 수월하다.</p>
-      </div>
-    </div>
-    <p class="highlight">도구 도입 전에는 목적과 운영 범위를 먼저 정리한 뒤 세부 설계로 넘어가는 순서를 권장한다.</p>
-  </section>
+ <section class="section container">
+ <h2 class="section-title">구성 요소</h2>
+ <div class="grid-2">
+ <div class="info-card">
+ <h3>콘텐츠 관리</h3>
+ <p>제작 일정과 주제를 미리 계획해 반복 작업을 줄이는 구조가 일반적이다.</p>
+ </div>
+ <div class="info-card">
+ <h3>연결 관리</h3>
+ <p>각 사이트 간 연결 규칙을 기록해두면 이후 점검과 수정이 수월하다.</p>
+ </div>
+ </div>
+ <p class="highlight">도구 도입 전에는 목적과 운영 범위를 먼저 정리한 뒤 세부 설계로 넘어가는 순서를 권장한다.</p>
+ </section>
 
-  <section class="section container">
-    <h2 class="section-title">자주 묻는 질문</h2>
-    <div class="faq-item">
-      <p class="faq-question">도입까지 걸리는 기간은 어느 정도인가요?</p>
-      <p class="faq-answer">구성 범위와 목적에 따라 달라지며, 설계 단계에서 대략적인 일정을 함께 정리하는 것이 일반적이다.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-question">운영 중 점검은 얼마나 자주 필요한가요?</p>
-      <p class="faq-answer">정기적인 점검 주기를 정해두고 연결 상태와 콘텐츠 품질을 확인하는 방식이 권장된다.</p>
-    </div>
-    <div class="faq-item">
-      <p class="faq-question">기존에 운영하던 사이트도 편입할 수 있나요?</p>
-      <p class="faq-answer">가능하지만 편입 전 콘텐츠 상태와 연결 이력을 점검한 뒤 구조에 맞게 정리하는 과정이 먼저 필요하다.</p>
-    </div>
-  </section>
+ <section class="section container">
+ <h2 class="section-title">자주 묻는 질문</h2>
+ <div class="faq-item">
+ <p class="faq-question">도입까지 걸리는 기간은 어느 정도인가요?</p>
+ <p class="faq-answer">구성 범위와 목적에 따라 달라지며, 설계 단계에서 대략적인 일정을 함께 정리하는 것이 일반적이다.</p>
+ </div>
+ <div class="faq-item">
+ <p class="faq-question">운영 중 점검은 얼마나 자주 필요한가요?</p>
+ <p class="faq-answer">정기적인 점검 주기를 정해두고 연결 상태와 콘텐츠 품질을 확인하는 방식이 권장된다.</p>
+ </div>
+ <div class="faq-item">
+ <p class="faq-question">기존에 운영하던 사이트도 편입할 수 있나요?</p>
+ <p class="faq-answer">가능하지만 편입 전 콘텐츠 상태와 연결 이력을 점검한 뒤 구조에 맞게 정리하는 과정이 먼저 필요하다.</p>
+ </div>
+ </section>
 
-  <section class="cta-section container">
-    <p>문의: <a class="cta-button tel-link" href="tel:010-1234-5678">010-1234-5678</a></p>
-  </section>
+ <section class="cta-section container">
+ <p>문의: </p>
+ </section>
 </main>
 
 

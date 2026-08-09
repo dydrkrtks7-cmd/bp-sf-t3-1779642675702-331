@@ -1,351 +1,349 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PBN 빌더 | 마포 신작애니 블로그 - 노아 스튜디오</title>
-    <meta name="description" content="마포 신작애니 제작 노하우를 블로그로 만나보세요. PBN 빌더가 알려주는 애니메이션 웹사이트 제작 팁과 인사이트. 지금 확인하세요!">
-    <meta name="keywords" content="PBN 빌더, 신작애니 블로그, 마포 애니메이션, 웹사이트 제작 팁, 애니메이션 스튜디오, 프리랜서 개발자, 노아 스튜디오">
-    <link rel="canonical" href="https://sf-t3-1779642675702-331.maphoshirts.xyz/blog.html">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-noir-gold">
-    <!-- Open Graph -->
-    <meta property="og:title" content="PBN 빌더 | 마포 신작애니 블로그 - 노아 스튜디오">
-    <meta property="og:description" content="마포 신작애니 제작 노하우를 블로그로 만나보세요. PBN 빌더가 알려주는 애니메이션 웹사이트 제작 팁과 인사이트. 지금 확인하세요!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sf-t3-1779642675702-331.maphoshirts.xyz/blog.html">
-    <meta property="og:image" content="https://sf-t3-1779642675702-331.vercel.app/og-blog.jpg">
-    <style>
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #0a0a0a;
-            color: #e5e5e5;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            z-index: 1000;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 72px;
-            padding: 0 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d4af37;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .logo span {
-            color: #e5e5e5;
-            font-weight: 300;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        nav a {
-            color: #a0a0a0;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        nav a:hover {
-            color: #d4af37;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #d4af37;
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after {
-            width: 100%;
-        }
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 8px;
-            background: none;
-            border: none;
-        }
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background: #d4af37;
-            transition: all 0.3s ease;
-        }
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 72px;
-                left: 0;
-                width: 100%;
-                background: rgba(10, 10, 10, 0.98);
-                flex-direction: column;
-                gap: 0;
-                padding: 20px 0;
-                border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            }
-            nav ul.active {
-                display: flex;
-            }
-            nav a {
-                padding: 14px 24px;
-                width: 100%;
-                text-align: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-            nav a::after {
-                display: none;
-            }
-            .container {
-                padding: 0 16px;
-            }
-        }
-        /* Main Content */
-        main {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            min-height: 100vh;
-        }
-        .blog-post {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 16px;
-            padding: 48px;
-            backdrop-filter: blur(8px);
-        }
-        .blog-post .meta {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-bottom: 24px;
-            font-size: 0.85rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .blog-post .meta .tag {
-            background: rgba(212, 175, 55, 0.15);
-            color: #d4af37;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .blog-post h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: -0.5px;
-        }
-        .blog-post h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            color: #d4af37;
-        }
-        .blog-post p {
-            font-size: 1.05rem;
-            color: #c0c0c0;
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        .blog-post p strong {
-            color: #d4af37;
-            font-weight: 600;
-        }
-        .blog-post .highlight-box {
-            background: rgba(212, 175, 55, 0.05);
-            border-left: 3px solid #d4af37;
-            padding: 20px 24px;
-            margin: 28px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .blog-post .highlight-box p {
-            margin-bottom: 0;
-            font-style: italic;
-            color: #d0d0d0;
-        }
-        .blog-post ul {
-            margin: 16px 0 24px 24px;
-            color: #c0c0c0;
-        }
-        .blog-post ul li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-        .blog-post ul li::marker {
-            color: #d4af37;
-        }
-        .blog-post .author-note {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-            font-size: 0.95rem;
-            color: #999;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .blog-post .author-note .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #d4af37, #8b6914);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #0a0a0a;
-            flex-shrink: 0;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 24px;
-            border-top: 1px solid rgba(212, 175, 55, 0.08);
-            color: #666;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-        footer a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            .blog-post {
-                padding: 28px 20px;
-                border-radius: 12px;
-            }
-            .blog-post h1 {
-                font-size: 1.8rem;
-            }
-            .blog-post h2 {
-                font-size: 1.3rem;
-            }
-            .blog-post p {
-                font-size: 0.98rem;
-            }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>PBN 빌더 | 마포 신작애니 블로그 - 노아 스튜디오</title>
+ <meta name="description" content="마포 신작애니 제작 노하우를 블로그로 만나보세요. PBN 빌더가 알려주는 애니메이션 웹사이트 제작 팁과 인사이트. 지금 확인하세요!">
+ <meta name="keywords" content="PBN 빌더, 신작애니 블로그, 마포 애니메이션, 웹사이트 제작 팁, 애니메이션 스튜디오, 프리랜서 개발자, 노아 스튜디오">
+ <link rel="canonical" href="https://sf-t3-1779642675702-331.maphoshirts.xyz/blog.html">
+ <!-- Open Graph -->
+ <meta property="og:title" content="PBN 빌더 | 마포 신작애니 블로그 - 노아 스튜디오">
+ <meta property="og:description" content="마포 신작애니 제작 노하우를 블로그로 만나보세요. PBN 빌더가 알려주는 애니메이션 웹사이트 제작 팁과 인사이트. 지금 확인하세요!">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://sf-t3-1779642675702-331.maphoshirts.xyz/blog.html">
+ <meta property="og:image" content="https://sf-t3-1779642675702-331.vercel.app/og-blog.jpg">
+ <style>
+ /* Reset & Base */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ background: #0a0a0a;
+ color: #e5e5e5;
+ line-height: 1.7;
+ overflow-x: hidden;
+ }
+ /* Container */
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ /* Header & Navigation */
+ header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(10, 10, 10, 0.95);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ z-index: 1000;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 72px;
+ padding: 0 24px;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .logo {
+ font-size: 1.4rem;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color: #d4af37;
+ text-decoration: none;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .logo span {
+ color: #e5e5e5;
+ font-weight: 300;
+ }
+ nav ul {
+ list-style: none;
+ display: flex;
+ gap: 32px;
+ align-items: center;
+ }
+ nav a {
+ color: #a0a0a0;
+ text-decoration: none;
+ font-size: 0.9rem;
+ font-weight: 400;
+ letter-spacing: 1px;
+ transition: color 0.3s ease;
+ position: relative;
+ }
+ nav a:hover {
+ color: #d4af37;
+ }
+ nav a::after {
+ content: '';
+ position: absolute;
+ bottom: -4px;
+ left: 0;
+ width: 0;
+ height: 1px;
+ background: #d4af37;
+ transition: width 0.3s ease;
+ }
+ nav a:hover::after {
+ width: 100%;
+ }
+ /* Hamburger */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 6px;
+ cursor: pointer;
+ padding: 8px;
+ background: none;
+ border: none;
+ }
+ .hamburger span {
+ display: block;
+ width: 28px;
+ height: 2px;
+ background: #d4af37;
+ transition: all 0.3s ease;
+ }
+ @media (max-width: 768px) {
+ .hamburger {
+ display: flex;
+ }
+ nav ul {
+ display: none;
+ position: absolute;
+ top: 72px;
+ left: 0;
+ width: 100%;
+ background: rgba(10, 10, 10, 0.98);
+ flex-direction: column;
+ gap: 0;
+ padding: 20px 0;
+ border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+ }
+ nav ul.active {
+ display: flex;
+ }
+ nav a {
+ padding: 14px 24px;
+ width: 100%;
+ text-align: center;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+ }
+ nav a::after {
+ display: none;
+ }
+ .container {
+ padding: 0 16px;
+ }
+ }
+ /* Main Content */
+ main {
+ padding-top: 120px;
+ padding-bottom: 80px;
+ min-height: 100vh;
+ }
+ .blog-post {
+ max-width: 800px;
+ margin: 0 auto;
+ background: rgba(255, 255, 255, 0.02);
+ border: 1px solid rgba(212, 175, 55, 0.1);
+ border-radius: 16px;
+ padding: 48px;
+ backdrop-filter: blur(8px);
+ }
+ .blog-post .meta {
+ display: flex;
+ gap: 16px;
+ align-items: center;
+ margin-bottom: 24px;
+ font-size: 0.85rem;
+ color: #888;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ }
+ .blog-post .meta .tag {
+ background: rgba(212, 175, 55, 0.15);
+ color: #d4af37;
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 0.75rem;
+ font-weight: 600;
+ }
+ .blog-post h1 {
+ font-size: 2.4rem;
+ font-weight: 700;
+ line-height: 1.3;
+ margin-bottom: 20px;
+ color: #f0f0f0;
+ letter-spacing: -0.5px;
+ }
+ .blog-post h2 {
+ font-size: 1.6rem;
+ font-weight: 600;
+ margin-top: 40px;
+ margin-bottom: 16px;
+ color: #d4af37;
+ }
+ .blog-post p {
+ font-size: 1.05rem;
+ color: #c0c0c0;
+ margin-bottom: 20px;
+ line-height: 1.8;
+ }
+ .blog-post p strong {
+ color: #d4af37;
+ font-weight: 600;
+ }
+ .blog-post .highlight-box {
+ background: rgba(212, 175, 55, 0.05);
+ border-left: 3px solid #d4af37;
+ padding: 20px 24px;
+ margin: 28px 0;
+ border-radius: 0 8px 8px 0;
+ }
+ .blog-post .highlight-box p {
+ margin-bottom: 0;
+ font-style: italic;
+ color: #d0d0d0;
+ }
+ .blog-post ul {
+ margin: 16px 0 24px 24px;
+ color: #c0c0c0;
+ }
+ .blog-post ul li {
+ margin-bottom: 10px;
+ line-height: 1.6;
+ }
+ .blog-post ul li::marker {
+ color: #d4af37;
+ }
+ .blog-post .author-note {
+ margin-top: 48px;
+ padding-top: 24px;
+ border-top: 1px solid rgba(212, 175, 55, 0.15);
+ font-size: 0.95rem;
+ color: #999;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ }
+ .blog-post .author-note .avatar {
+ width: 48px;
+ height: 48px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #d4af37, #8b6914);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 700;
+ font-size: 1.2rem;
+ color: #0a0a0a;
+ flex-shrink: 0;
+ }
+ /* Footer */
+ footer {
+ text-align: center;
+ padding: 40px 24px;
+ border-top: 1px solid rgba(212, 175, 55, 0.08);
+ color: #666;
+ font-size: 0.85rem;
+ letter-spacing: 1px;
+ }
+ footer a {
+ color: #d4af37;
+ text-decoration: none;
+ }
+ /* Responsive */
+ @media (max-width: 768px) {
+ .blog-post {
+ padding: 28px 20px;
+ border-radius: 12px;
+ }
+ .blog-post h1 {
+ font-size: 1.8rem;
+ }
+ .blog-post h2 {
+ font-size: 1.3rem;
+ }
+ .blog-post p {
+ font-size: 0.98rem;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <a href="/" class="logo">PBN <span>빌더</span></a>
-            <button class="hamburger" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <ul>
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/about">소개</a></li>
-                    <li><a href="/work">작업</a></li>
-                    <li><a href="/blog">블로그</a></li>
-                    <li><a href="/contact">문의</a></li>
-                    <li><a href="tel:010-1234-5678" style="color:#d4af37; font-weight:600;">010-1234-5678</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="header-inner">
+ <a href="/" class="logo">PBN <span>빌더</span></a>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="this.nextElementSibling.classList.toggle('active')">
+ 
+ 
+ 
+ </button>
+ <nav>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/about">소개</a></li>
+ <li><a href="/work">작업</a></li>
+ <li><a href="/blog">블로그</a></li>
+ <li><a href="/contact">문의</a></li>
+ 
+ </ul>
+ </nav>
+ </div>
+ </header>
 
 <main>
-  <article class="blog-post container">
-    <p class="meta">마포 · 신작애니 제작 노트</p>
-    <h1>PBN 빌더로 살펴보는 마포 신작애니 콘텐츠 구조</h1>
-    <p class="tag">정보</p>
+ <article class="blog-post container">
+ <p class="meta">마포 · 신작애니 제작 노트</p>
+ <h1>PBN 빌더로 살펴보는 마포 신작애니 콘텐츠 구조</h1>
+ <p class="tag">정보</p>
 
-    <p>PBN 빌더는 여러 사이트를 하나의 콘텐츠 네트워크로 관리하기 위한 도구를 뜻한다. 이 글에서는 마포 지역 신작애니 콘텐츠 제작 환경에서 이러한 도구를 검토할 때 살펴볼 기본 개념을 정리한다.</p>
+ <p>PBN 빌더는 여러 사이트를 하나의 콘텐츠 네트워크로 관리하기 위한 도구를 뜻한다. 이 글에서는 마포 지역 신작애니 콘텐츠 제작 환경에서 이러한 도구를 검토할 때 살펴볼 기본 개념을 정리한다.</p>
 
-    <h2>용어 정리</h2>
-    <p><strong>PBN(Private Blog Network)</strong>은 여러 사이트를 연결해 콘텐츠와 링크를 관리하는 네트워크 구조를 말한다. <strong>빌더</strong>는 이러한 구조를 설정하고 관리하는 도구를 가리킨다.</p>
+ <h2>용어 정리</h2>
+ <p><strong>PBN(Private Blog Network)</strong>은 여러 사이트를 연결해 콘텐츠와 링크를 관리하는 네트워크 구조를 말한다. <strong>빌더</strong>는 이러한 구조를 설정하고 관리하는 도구를 가리킨다.</p>
 
-    <div class="highlight-box">
-      <p>네트워크 구조를 검토할 때는 각 사이트의 콘텐츠 주제가 얼마나 다양하게 구성되어 있는지를 함께 확인하는 것이 중요하다. 동일한 형식의 반복은 콘텐츠 품질 저하로 이어질 수 있다.</p>
-    </div>
+ <div class="highlight-box">
+ <p>네트워크 구조를 검토할 때는 각 사이트의 콘텐츠 주제가 얼마나 다양하게 구성되어 있는지를 함께 확인하는 것이 중요하다. 동일한 형식의 반복은 콘텐츠 품질 저하로 이어질 수 있다.</p>
+ </div>
 
-    <h2>제작 노하우 요약</h2>
-    <ul>
-      <li>사이트별로 주제와 구성을 다르게 설계한다</li>
-      <li>업데이트 주기를 일정하게 유지한다</li>
-      <li>연결 상태를 정기적으로 점검한다</li>
-    </ul>
+ <h2>제작 노하우 요약</h2>
+ <ul>
+ <li>사이트별로 주제와 구성을 다르게 설계한다</li>
+ <li>업데이트 주기를 일정하게 유지한다</li>
+ <li>연결 상태를 정기적으로 점검한다</li>
+ </ul>
 
-    <p class="author-note">본 안내는 일반적인 절차를 정리한 정보이며, 세부 진행 방식은 운영 목적에 따라 달라질 수 있다.</p>
+ <p class="author-note">본 안내는 일반적인 절차를 정리한 정보이며, 세부 진행 방식은 운영 목적에 따라 달라질 수 있다.</p>
 
-    <h2>흔히 하는 실수</h2>
-    <ul>
-      <li>모든 사이트에 동일한 주제와 문구만 반복해서 사용하는 경우</li>
-      <li>연결 상태를 점검하지 않고 오래 방치하는 경우</li>
-      <li>업데이트 일정을 불규칙하게 운영해 관리가 누락되는 경우</li>
-    </ul>
+ <h2>흔히 하는 실수</h2>
+ <ul>
+ <li>모든 사이트에 동일한 주제와 문구만 반복해서 사용하는 경우</li>
+ <li>연결 상태를 점검하지 않고 오래 방치하는 경우</li>
+ <li>업데이트 일정을 불규칙하게 운영해 관리가 누락되는 경우</li>
+ </ul>
 
-    <h2>궁금한 점 모음</h2>
-    <p><strong>Q. 콘텐츠 제작과 네트워크 관리 중 무엇을 먼저 준비해야 하나요?</strong><br>콘텐츠 주제와 제작 일정을 먼저 정리한 뒤 네트워크 구조를 설계하는 순서가 일반적으로 권장된다.</p>
-    <p><strong>Q. 사이트 수가 많을수록 항상 유리한가요?</strong><br>단순히 수를 늘리기보다 각 사이트의 콘텐츠 품질과 주제 다양성을 유지하는 편이 장기적으로 더 안정적인 구조로 평가된다.</p>
-    <p><strong>Q. 기존 사이트를 재활용해도 되나요?</strong><br>재활용 자체보다 콘텐츠 갱신 이력과 연결 상태를 먼저 점검한 뒤 재편입 여부를 판단하는 순서가 안전하다.</p>
+ <h2>궁금한 점 모음</h2>
+ <p><strong>Q. 콘텐츠 제작과 네트워크 관리 중 무엇을 먼저 준비해야 하나요?</strong><br>콘텐츠 주제와 제작 일정을 먼저 정리한 뒤 네트워크 구조를 설계하는 순서가 일반적으로 권장된다.</p>
+ <p><strong>Q. 사이트 수가 많을수록 항상 유리한가요?</strong><br>단순히 수를 늘리기보다 각 사이트의 콘텐츠 품질과 주제 다양성을 유지하는 편이 장기적으로 더 안정적인 구조로 평가된다.</p>
+ <p><strong>Q. 기존 사이트를 재활용해도 되나요?</strong><br>재활용 자체보다 콘텐츠 갱신 이력과 연결 상태를 먼저 점검한 뒤 재편입 여부를 판단하는 순서가 안전하다.</p>
 
-    <p>문의: <a href="tel:010-1234-5678">010-1234-5678</a></p>
-  </article>
+ <p>문의: </p>
+ </article>
 </main>
 
 
